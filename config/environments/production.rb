@@ -80,7 +80,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+#Required for Heroku
+config.action_mailer.default_url_options = { host: 'https://jackspinteresting.herokuapp.com/'}
 
   # Do not dump schema after migrations.
+  #Note to set this to your actual host 
   config.active_record.dump_schema_after_migration = false
 end
